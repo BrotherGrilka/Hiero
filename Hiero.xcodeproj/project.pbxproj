@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CAB2CC48140A7F1100862504 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB2CC47140A7F1100862504 /* UIKit.framework */; };
+		CAB2CC4A140A7F1100862504 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB2CC49140A7F1100862504 /* Foundation.framework */; };
+		CAB2CC4C140A7F1100862504 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB2CC4B140A7F1100862504 /* CoreGraphics.framework */; };
+		CAB2CC52140A7F1100862504 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAB2CC50140A7F1100862504 /* InfoPlist.strings */; };
+		CAB2CC54140A7F1100862504 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2CC53140A7F1100862504 /* main.m */; };
+		CAB2CC58140A7F1100862504 /* HieroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2CC57140A7F1100862504 /* HieroAppDelegate.m */; };
+		CAB2CC5B140A7F1100862504 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB2CC59140A7F1100862504 /* MainWindow.xib */; };
+		CAB2CC5E140A7F1100862504 /* HieroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2CC5D140A7F1100862504 /* HieroViewController.m */; };
+		CAB2CC61140A7F1100862504 /* HieroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAB2CC5F140A7F1100862504 /* HieroViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CAB2CC43140A7F1000862504 /* Hiero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hiero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAB2CC47140A7F1100862504 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CAB2CC49140A7F1100862504 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CAB2CC4B140A7F1100862504 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CAB2CC4F140A7F1100862504 /* Hiero-Info.plist */ = {isa = PBXFileReference; path = "Hiero-Info.plist"; sourceTree = "<group>"; };
+		CAB2CC51140A7F1100862504 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CAB2CC53140A7F1100862504 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CAB2CC55140A7F1100862504 /* Hiero-Prefix.pch */ = {isa = PBXFileReference; path = "Hiero-Prefix.pch"; sourceTree = "<group>"; };
+		CAB2CC56140A7F1100862504 /* HieroAppDelegate.h */ = {isa = PBXFileReference; path = HieroAppDelegate.h; sourceTree = "<group>"; };
+		CAB2CC57140A7F1100862504 /* HieroAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HieroAppDelegate.m; sourceTree = "<group>"; };
+		CAB2CC5A140A7F1100862504 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		CAB2CC5C140A7F1100862504 /* HieroViewController.h */ = {isa = PBXFileReference; path = HieroViewController.h; sourceTree = "<group>"; };
+		CAB2CC5D140A7F1100862504 /* HieroViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HieroViewController.m; sourceTree = "<group>"; };
+		CAB2CC60140A7F1100862504 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HieroViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAB2CC40140A7F1000862504 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB2CC48140A7F1100862504 /* UIKit.framework in Frameworks */,
+				CAB2CC4A140A7F1100862504 /* Foundation.framework in Frameworks */,
+				CAB2CC4C140A7F1100862504 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CAB2CC38140A7F1000862504 = {
+			isa = PBXGroup;
+			children = (
+				CAB2CC4D140A7F1100862504 /* Hiero */,
+				CAB2CC46140A7F1100862504 /* Frameworks */,
+				CAB2CC44140A7F1000862504 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CAB2CC44140A7F1000862504 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2CC43140A7F1000862504 /* Hiero.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAB2CC46140A7F1100862504 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2CC47140A7F1100862504 /* UIKit.framework */,
+				CAB2CC49140A7F1100862504 /* Foundation.framework */,
+				CAB2CC4B140A7F1100862504 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAB2CC4D140A7F1100862504 /* Hiero */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2CC56140A7F1100862504 /* HieroAppDelegate.h */,
+				CAB2CC57140A7F1100862504 /* HieroAppDelegate.m */,
+				CAB2CC59140A7F1100862504 /* MainWindow.xib */,
+				CAB2CC5C140A7F1100862504 /* HieroViewController.h */,
+				CAB2CC5D140A7F1100862504 /* HieroViewController.m */,
+				CAB2CC5F140A7F1100862504 /* HieroViewController.xib */,
+				CAB2CC4E140A7F1100862504 /* Supporting Files */,
+			);
+			path = Hiero;
+			sourceTree = "<group>";
+		};
+		CAB2CC4E140A7F1100862504 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2CC4F140A7F1100862504 /* Hiero-Info.plist */,
+				CAB2CC50140A7F1100862504 /* InfoPlist.strings */,
+				CAB2CC53140A7F1100862504 /* main.m */,
+				CAB2CC55140A7F1100862504 /* Hiero-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAB2CC42140A7F1000862504 /* Hiero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAB2CC64140A7F1100862504 /* Build configuration list for PBXNativeTarget "Hiero" */;
+			buildPhases = (
+				CAB2CC3F140A7F1000862504 /* Sources */,
+				CAB2CC40140A7F1000862504 /* Frameworks */,
+				CAB2CC41140A7F1000862504 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hiero;
+			productName = Hiero;
+			productReference = CAB2CC43140A7F1000862504 /* Hiero.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAB2CC3A140A7F1000862504 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Mmyrmidons;
+			};
+			buildConfigurationList = CAB2CC3D140A7F1000862504 /* Build configuration list for PBXProject "Hiero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CAB2CC38140A7F1000862504;
+			productRefGroup = CAB2CC44140A7F1000862504 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAB2CC42140A7F1000862504 /* Hiero */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAB2CC41140A7F1000862504 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB2CC52140A7F1100862504 /* InfoPlist.strings in Resources */,
+				CAB2CC5B140A7F1100862504 /* MainWindow.xib in Resources */,
+				CAB2CC61140A7F1100862504 /* HieroViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAB2CC3F140A7F1000862504 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAB2CC54140A7F1100862504 /* main.m in Sources */,
+				CAB2CC58140A7F1100862504 /* HieroAppDelegate.m in Sources */,
+				CAB2CC5E140A7F1100862504 /* HieroViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CAB2CC50140A7F1100862504 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB2CC51140A7F1100862504 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CAB2CC59140A7F1100862504 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB2CC5A140A7F1100862504 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		CAB2CC5F140A7F1100862504 /* HieroViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAB2CC60140A7F1100862504 /* en */,
+			);
+			name = HieroViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAB2CC62140A7F1100862504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CAB2CC63140A7F1100862504 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAB2CC65140A7F1100862504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hiero/Hiero-Prefix.pch";
+				INFOPLIST_FILE = "Hiero/Hiero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CAB2CC66140A7F1100862504 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hiero/Hiero-Prefix.pch";
+				INFOPLIST_FILE = "Hiero/Hiero-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAB2CC3D140A7F1000862504 /* Build configuration list for PBXProject "Hiero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB2CC62140A7F1100862504 /* Debug */,
+				CAB2CC63140A7F1100862504 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAB2CC64140A7F1100862504 /* Build configuration list for PBXNativeTarget "Hiero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAB2CC65140A7F1100862504 /* Debug */,
+				CAB2CC66140A7F1100862504 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CAB2CC3A140A7F1000862504 /* Project object */;
+}
