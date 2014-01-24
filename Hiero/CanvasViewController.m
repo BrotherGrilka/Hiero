@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
 
-	//Retrieve all for aNSManagedObject subclass
 	NSArray *savedGlyphs = [Glyph MR_findAll];
 	
 	[savedGlyphs enumerateObjectsUsingBlock:^(Glyph *glyph, NSUInteger idx, BOOL *stop) {
