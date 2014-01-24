@@ -1,13 +1,17 @@
 //
-//  HieroViewController.h
+//  RockyViewController.h
 //  Hiero
 //
-//  Created by Duncan Davidson on 8/28/11.
-//  Copyright 2011 Mmyrmidons. All rights reserved.
+//  Created by Dunc on 1/10/14.
+//  Copyright (c) 2014 Mmyrmidons. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GlyphButton.h"
 
 @interface HieroViewController : UIViewController
+
+@property (nonatomic, strong) NSNumber *droppedGlyphs;
+
+- (void)cloneGlyphButton:(GlyphButton *)glyphButton;
 
 @end

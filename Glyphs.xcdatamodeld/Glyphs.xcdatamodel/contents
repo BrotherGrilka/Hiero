@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B3116" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Glyph" representedClassName="Glyph" syncable="YES">
+        <attribute name="key" attributeType="String" syncable="YES"/>
+        <attribute name="originX" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="originY" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="dog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MissTikky" inverseName="glyphs" inverseEntity="MissTikky" syncable="YES"/>
+    </entity>
+    <entity name="Manners" syncable="YES">
+        <attribute name="favoriteColor" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="color" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Manners"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="MissTikky" syncable="YES">
+        <attribute name="walk" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="glyphs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Glyph" inverseName="dog" inverseEntity="Glyph" syncable="YES"/>
+    </entity>
+    <fetchRequest name="HiManny" entity="Glyph" predicateString="key BEGINSWITH &quot;13&quot;"/>
+    <elements>
+        <element name="Glyph" positionX="-182" positionY="-117" width="173" height="103"/>
+        <element name="Manners" positionX="88" positionY="-87" width="128" height="86"/>
+        <element name="MissTikky" positionX="0" positionY="0" width="128" height="75"/>
+    </elements>
+</model>
