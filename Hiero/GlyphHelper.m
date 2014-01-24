@@ -11,7 +11,9 @@
 @implementation GlyphHelper
 
 + (NSDictionary *)glyphs {
-	return [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Glyphs" ofType:@"plist"]];
+	NSString *glyphPath = [[NSBundle mainBundle] pathForResource:@"Glyphs" ofType:@"plist"];
+	
+	return [NSDictionary dictionaryWithContentsOfFile:glyphPath];
 }
 
 + (NSArray *)unicodes {
