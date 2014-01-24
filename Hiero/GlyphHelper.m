@@ -12,7 +12,7 @@
 
 + (NSDictionary *)glyphs {
 	NSString *glyphPath = [[NSBundle mainBundle] pathForResource:@"Glyphs" ofType:@"plist"];
-	
+	NSLog(@"Hi Appy");
 	return [NSDictionary dictionaryWithContentsOfFile:glyphPath];
 }
 
