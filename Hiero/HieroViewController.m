@@ -8,10 +8,18 @@
 
 #import "HieroViewController.h"
 #import "CanvasViewController.h"
-#import "KeyboardViewController.h"
+#import "TopKeyboardViewController.h"
+#import "LeftKeyboardViewController.h"
 #import "MannysViewController.h"
+#import "AnimatedGlyphButton.h"
+#import "GlyphStrut.h"
+
 
 @interface HieroViewController ()
+
+@property (nonatomic, weak) TopKeyboardViewController *topKeyboard;
+@property (nonatomic, weak) LeftKeyboardViewController *leftKeyboard;
+@property (nonatomic, weak) CanvasViewController *canvas;
 
 @end
 
@@ -32,16 +40,28 @@
 	
 	self.droppedGlyphs = 0;
 
-	KeyboardViewController *keyboardViewController = self.childViewControllers[0];
+	self.topKeyboard = self.childViewControllers[0];
+	self.canvas = self.childViewControllers[1];
+	self.leftKeyboard = self.childViewControllers[2];
+		
+	[self addObserver:self.topKeyboard forKeyPath:@"droppedGlyphs" options:0 context:NULL];
 	
-	[self addObserver:keyboardViewController forKeyPath:@"droppedGlyphs" options:0 context:NULL];
-	
-	MannysViewController *mannysViewController = [[MannysViewController alloc] initWithNibName:@"MannysViewController" bundle:nil];
-	
-	mannysViewController.view.frame = CGRectMake(self.view.frame.size.width - mannysViewController.view.frame.size.width, mannysViewController.view.frame.origin.y, mannysViewController.view.frame.size.width, mannysViewController.view.frame.size.height);
-	
-//	[self becomeFirstResponder];
-	[self.view addSubview:mannysViewController.view];
+//	MannysViewController *mannysViewController = [[MannysViewController alloc] initWithNibName:@"MannysViewController" bundle:nil];
+//	
+//	
+//	mannysViewController.view.frame = CGRectMake(0.0, 0.0, mannysViewController.view.frame.size.width, mannysViewController.view.frame.size.height);
+//	
+////	[self becomeFirstResponder];
+//	[self.view addSubview:mannysViewController.view];
+//
+//
+//	[mannysViewController.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+//	
+//	NSDictionary *constraintsDictionary = @{@"mannysView": mannysViewController.view};
+//
+//	NSArray *cons = [NSLayoutConstraint constraintsWithVisualFormat:@"|-200-[mannysView]" options:0 metrics:nil views:constraintsDictionary];
+//
+//	[self.view addConstraint:cons[0]];
 }
 
 - (void)copy:(id)sender {
@@ -50,10 +70,8 @@
 
 
 
-- (void)cloneGlyphButton:(GlyphButton *)glyphButton {
-	UIView *keyboardView = self.view.subviews[0];
-	
-	GlyphButton *clonedGlyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake(glyphButton.frame.origin.x + keyboardView.frame.origin.x, glyphButton.frame.origin.y + keyboardView.frame.origin.y, 95, 95)
+- (void)cloneGlyphButton:(GlyphButton *)glyphButton fromKeyboard:(KeyboardViewController *)keyboard {
+	AnimatedGlyphButton *clonedGlyphButton = [[AnimatedGlyphButton alloc] initWithFrame:CGRectMake(glyphButton.frame.origin.x + keyboard.view.superview.frame.origin.x, glyphButton.frame.origin.y + keyboard.view.superview.frame.origin.y, 95, 95)
 																		   andKey:glyphButton.key
 																		withColor:[GlyphColor strawColor]];
 
@@ -67,12 +85,10 @@
 
 - (void)dragClone:(UIPanGestureRecognizer *)recognizer {
 	if (recognizer.state == UIGestureRecognizerStateEnded) {
-		UIView *canvasView = self.view.subviews[1];
-
-		if (recognizer.view.frame.origin.x < canvasView.frame.origin.x
-			|| recognizer.view.frame.origin.x + recognizer.view.frame.size.width > canvasView.frame.origin.x + canvasView.frame.size.width
-			|| recognizer.view.frame.origin.y < canvasView.frame.origin.y
-			|| recognizer.view.frame.origin.y + recognizer.view.frame.size.height > canvasView.frame.origin.y + canvasView.frame.size.height)
+		if (recognizer.view.frame.origin.x < self.canvas.view.superview.frame.origin.x
+			|| recognizer.view.frame.origin.x + recognizer.view.frame.size.width > self.canvas.view.superview.frame.origin.x + self.canvas.view.superview.frame.size.width
+			|| recognizer.view.frame.origin.y < self.canvas.view.superview.frame.origin.y
+			|| recognizer.view.frame.origin.y + recognizer.view.frame.size.height > self.canvas.view.superview.frame.origin.y + self.canvas.view.superview.frame.size.height)
 				[UIView animateWithDuration:0.5
 									  delay:0.0
 									options:nil
@@ -84,19 +100,26 @@
 									 self.droppedGlyphs = [NSNumber numberWithInt: [self.droppedGlyphs intValue] + 1];
 								 }];
 		else {
-			GlyphButton *glyphButton = (GlyphButton *) recognizer.view;
-			CanvasViewController *canvasViewController = (CanvasViewController *) self.childViewControllers[1];
-
-			[recognizer.view removeFromSuperview];
-			[glyphButton setTitleColor:[GlyphColor cantaloupeColor] forState:UIControlStateNormal];
-			[glyphButton setFrame:CGRectMake(glyphButton.frame.origin.x - canvasView.frame.origin.x, glyphButton.frame.origin.y - canvasView.frame.origin.y, glyphButton.frame.size.width, glyphButton.frame.size.height)];
-			[canvasViewController addGlyph:glyphButton];
+			AnimatedGlyphButton *animatedGlyphButton = (AnimatedGlyphButton *) recognizer.view;
+			
+			if (self.canvas.focusedStrut) {
+				CGPoint destination = CGPointMake(self.canvas.view.superview.frame.origin.x + self.canvas.focusedStrut.view.center.x, self.canvas.view.superview.frame.origin.y + self.canvas.focusedStrut.view.frame.origin.y + self.canvas.focusedStrut.view.frame.size.height + animatedGlyphButton.frame.size.height / 2);
+				
+//				[animatedGlyphButton displayLinkToPoint:destination withFinishedBlock:^ {
+				[animatedGlyphButton bezierToPoint:destination withFinishedBlock:^ {
+					[animatedGlyphButton removeFromSuperview];
+					[self.canvas addGlyph:animatedGlyphButton];
+				}];
+			} else {
+				[self.canvas addGlyph:animatedGlyphButton];
+				[animatedGlyphButton removeFromSuperview];
+			}
+				
 		}
 		
 		for (UIGestureRecognizer *gestureRecognizer in recognizer.view.gestureRecognizers)
 			[recognizer.view removeGestureRecognizer:gestureRecognizer];
-	}
-	else {
+	} else {
 		CGPoint translation = [recognizer translationInView:self.view];
 		CGRect recognizerFrame = recognizer.view.frame;
 		recognizerFrame.origin.x += translation.x;
@@ -120,6 +143,10 @@
 	}
 }
 
+- (IBAction)clearGlyphs:(id)sender {
+	[self.canvas clearGlyphs];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -127,11 +154,7 @@
 }
 
 - (void)dealloc {
-	UIView *keyboardView = self.view.subviews[0];
-	
-	NSLog(@"Manners");
-
-	[self removeObserver:keyboardView forKeyPath:@"droppedGlyphs"];
+	[self removeObserver:self.topKeyboard.view forKeyPath:@"droppedGlyphs"];
 }
 
 @end

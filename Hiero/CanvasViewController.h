@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "GlyphButton.h"
 
+@class GlyphStrut;
+
 @interface CanvasViewController : UIViewController
 
+@property (nonatomic, strong) GlyphStrut *focusedStrut;
+
 - (void)addGlyph:(GlyphButton *)glyphButton;
+- (void)clearGlyphs;
 
 @end

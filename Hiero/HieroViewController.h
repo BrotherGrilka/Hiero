@@ -7,11 +7,13 @@
 //
 
 #import "GlyphButton.h"
+#import "KeyboardViewController.h"
 
 @interface HieroViewController : UIViewController
 
 @property (nonatomic, strong) NSNumber *droppedGlyphs;
 
-- (void)cloneGlyphButton:(GlyphButton *)glyphButton;
+- (void)cloneGlyphButton:(GlyphButton *)glyphButton fromKeyboard:(KeyboardViewController *)keyboard;
+- (IBAction)clearGlyphs:(id)sender;
 
 @end

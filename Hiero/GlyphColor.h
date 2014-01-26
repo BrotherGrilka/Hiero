@@ -13,5 +13,6 @@
 + (UIColor*)iceColor;
 + (UIColor*)strawColor;
 + (UIColor*)cantaloupeColor;
++ (UIColor*)yellowGreenColor;
 
 @end

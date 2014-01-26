@@ -9,44 +9,78 @@
             <objects>
                 <viewController id="TJB-Ui-Fc5" customClass="HieroViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aov-Oe-4Qz"/>
-                        <viewControllerLayoutGuide type="bottom" id="rJD-vc-zxJ"/>
+                        <viewControllerLayoutGuide type="top" id="j89-Lc-agI"/>
+                        <viewControllerLayoutGuide type="bottom" id="JXg-n3-WRz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D0U-5l-wMp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-3e-fwH">
-                                <rect key="frame" x="18" y="98" width="377" height="190"/>
+                            <containerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-3e-fwH">
+                                <rect key="frame" x="18" y="17" width="377" height="190"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="BKx-jc-R07"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="zEd-bU-g1p" kind="embed" id="zZz-b7-yFL"/>
                                 </connections>
                             </containerView>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-AH-CLe">
-                                <rect key="frame" x="180" y="310" width="540" height="440"/>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-AH-CLe">
+                                <rect key="frame" x="199" y="310" width="540" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.50196081399917603" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="b3s-D9-mrD" kind="embed" id="5NL-13-hAx"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuM-W6-x4M">
+                                <rect key="frame" x="100" y="220" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" image="Manners80.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearGlyphs:" destination="TJB-Ui-Fc5" eventType="touchUpInside" id="44t-gy-pXm"/>
+                                </connections>
+                            </button>
+                            <containerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-TN-AE1">
+                                <rect key="frame" x="7" y="341" width="190" height="377"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="zy2-Uf-N4h" kind="embed" id="Cyu-Va-7ep"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.50196081399917603" green="0.25098040699958801" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Lt-3e-fwH" firstAttribute="top" secondItem="D0U-5l-wMp" secondAttribute="top" constant="17" id="6Q4-OT-yr0"/>
+                            <constraint firstItem="wFH-AH-CLe" firstAttribute="top" secondItem="6Lt-3e-fwH" secondAttribute="bottom" constant="11" id="Fqb-rz-sGb"/>
+                            <constraint firstItem="XXV-TN-AE1" firstAttribute="leading" secondItem="D0U-5l-wMp" secondAttribute="leading" constant="17" id="Z0R-mq-dQq"/>
+                            <constraint firstAttribute="trailing" secondItem="6Lt-3e-fwH" secondAttribute="trailing" constant="373" id="aJI-Ym-C8p"/>
+                            <constraint firstItem="JXg-n3-WRz" firstAttribute="top" secondItem="wFH-AH-CLe" secondAttribute="bottom" constant="17" id="fyh-P0-DV2"/>
+                            <constraint firstItem="XXV-TN-AE1" firstAttribute="top" secondItem="HuM-W6-x4M" secondAttribute="bottom" constant="41" id="hDt-UY-kzZ"/>
+                            <constraint firstItem="6Lt-3e-fwH" firstAttribute="leading" secondItem="D0U-5l-wMp" secondAttribute="leading" constant="20" symbolic="YES" id="igz-P1-g6E"/>
+                            <constraint firstItem="HuM-W6-x4M" firstAttribute="top" secondItem="6Lt-3e-fwH" secondAttribute="bottom" constant="17" id="knA-Au-GsF"/>
+                            <constraint firstItem="wFH-AH-CLe" firstAttribute="leading" secondItem="XXV-TN-AE1" secondAttribute="trailing" constant="3" id="qdW-q5-KHb"/>
+                            <constraint firstAttribute="trailing" secondItem="wFH-AH-CLe" secondAttribute="trailing" constant="17" id="uDy-cP-98B"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjz-Tv-WkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="-410"/>
+            <point key="canvasLocation" x="161" y="-934"/>
         </scene>
-        <!--Keyboard View Controller-->
+        <!--Top Keyboard View Controller-->
         <scene sceneID="Fwr-ZH-vaY">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zEd-bU-g1p" customClass="KeyboardViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zEd-bU-g1p" customClass="TopKeyboardViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sr5-60-btr"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qxg-zm-toz"/>
+                        <viewControllerLayoutGuide type="top" id="8k1-Ih-2a8"/>
+                        <viewControllerLayoutGuide type="bottom" id="pCQ-HK-Kms"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z94-ss-hMz">
                         <rect key="frame" x="0.0" y="0.0" width="377" height="190"/>
@@ -62,11 +96,10 @@
         <!--Rocky Glyph View Controller-->
         <scene sceneID="CSr-mT-Kj0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xfO-PF-qKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="glyph" id="axa-I1-7wD" customClass="RockyGlyphViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AJ0-nD-YLY"/>
-                        <viewControllerLayoutGuide type="bottom" id="vvN-W9-yOd"/>
+                        <viewControllerLayoutGuide type="top" id="4rL-r3-7ea"/>
+                        <viewControllerLayoutGuide type="bottom" id="t0R-OA-0Ee"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bow-mU-M1X">
                         <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
@@ -93,6 +126,7 @@
                         <outlet property="glyphButton" destination="T11-BG-RJV" id="Crw-bw-660"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfO-PF-qKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2029" y="-798"/>
         </scene>
@@ -101,30 +135,44 @@
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="b3s-D9-mrD" customClass="CanvasViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bFg-xR-6cf"/>
-                        <viewControllerLayoutGuide type="bottom" id="eJ4-Pn-5pq"/>
+                        <viewControllerLayoutGuide type="top" id="B9e-Nh-dJT"/>
+                        <viewControllerLayoutGuide type="bottom" id="W12-Si-Kfc"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ShL-yJ-oiL">
                         <rect key="frame" x="0.0" y="0.0" width="540" height="440"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fo-M5-Hvi">
-                                <rect key="frame" x="322" y="298" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hi Manny">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLS-sp-Tjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="83"/>
+            <point key="canvasLocation" x="1114" y="107"/>
+        </scene>
+        <!--Left Keyboard View Controller-->
+        <scene sceneID="BaF-GU-MNK">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zy2-Uf-N4h" customClass="LeftKeyboardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KvI-AD-OWn"/>
+                        <viewControllerLayoutGuide type="bottom" id="lhi-bz-nNm"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6fs-3Z-1Eb">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="377"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.10318090582278627" green="0.12549019607843137" blue="0.074995418017171842" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01U-Jw-sum" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-289" y="-186"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Manners80.png" width="80" height="80"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -8,6 +8,8 @@
 
 #import "CanvasViewController.h"
 #import "Glyph.h"
+#import "Strut.h"
+#import "GlyphStrut.h"
 
 @interface CanvasViewController ()
 
@@ -28,27 +30,34 @@
 {
     [super viewDidLoad];
 
-	NSArray *savedGlyphs = [Glyph MR_findAll];
-	
-	[savedGlyphs enumerateObjectsUsingBlock:^(Glyph *glyph, NSUInteger idx, BOOL *stop) {
-		GlyphButton *rockyGlyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake([glyph.originX floatValue], [glyph.originY floatValue], 95, 95)
-																	andKey:glyph.key
-																 withColor:[GlyphColor cantaloupeColor]];
-
-		[self.view addSubview:rockyGlyphButton];
+	[[Strut MR_findAll] enumerateObjectsUsingBlock:^(Strut *strut, NSUInteger idx, BOOL *stop) {
+		if (!self.focusedStrut)
+			self.focusedStrut = [[GlyphStrut alloc] initWithStrut:strut];
 	}];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	if (self.focusedStrut)
+		[self.view addSubview:self.focusedStrut.view];
+}
+
 - (void)addGlyph:(GlyphButton *)glyphButton {
-	[self.view addSubview:glyphButton];
-	
-	Glyph *glyph = [Glyph MR_createEntity];
-	
-	glyph.key = glyphButton.key;
-	glyph.originX = [NSNumber numberWithFloat:glyphButton.frame.origin.x];
-	glyph.originY = [NSNumber numberWithFloat: glyphButton.frame.origin.y];
-	
+	if (self.focusedStrut)
+		[self.focusedStrut addGlyph:glyphButton];
+	else {
+		self.focusedStrut = [[GlyphStrut alloc] initWithGlyphButton:glyphButton withinCanvas:self.view.superview.frame];
+		[self.view addSubview:self.focusedStrut.view];
+	}
+}
+
+- (void)clearGlyphs {
+	[Strut MR_deleteAllMatchingPredicate:[NSPredicate predicateWithFormat:nil]];
 	[[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+	
+	self.focusedStrut = nil;
+ 
+	for (UIView *subview in self.view.subviews)
+		[subview removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning
