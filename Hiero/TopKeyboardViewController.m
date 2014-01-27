@@ -29,15 +29,15 @@
     [super viewDidLoad];
 	__block int r = 0;
     __block int z = 0;
-	__block int glyphTally = 18 ;
+	__block int glyphTally = 36;
 	
     [[GlyphHelper glyphs] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-		if (z < 6)
+		if (z < 18)
 			z++;
 		else {
 			GlyphButton *rockyGlyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake(r * 95, (z % 2) * 95, 95, 95)
 																		andKey:key
-																	 withColor:[GlyphColor iceColor]];
+																	 withColor:[UIColor iceColor]];
 			[self.view addSubview:rockyGlyphButton];
 			
 			if (++z == glyphTally)

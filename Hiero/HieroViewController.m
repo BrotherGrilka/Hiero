@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Mmyrmidons. All rights reserved.
 //
 
+#include <objc/runtime.h>
+
 #import "HieroViewController.h"
 #import "CanvasViewController.h"
 #import "TopKeyboardViewController.h"
@@ -73,8 +75,17 @@
 - (void)cloneGlyphButton:(GlyphButton *)glyphButton fromKeyboard:(KeyboardViewController *)keyboard {
 	AnimatedGlyphButton *clonedGlyphButton = [[AnimatedGlyphButton alloc] initWithFrame:CGRectMake(glyphButton.frame.origin.x + keyboard.view.superview.frame.origin.x, glyphButton.frame.origin.y + keyboard.view.superview.frame.origin.y, 95, 95)
 																		   andKey:glyphButton.key
-																		withColor:[GlyphColor strawColor]];
+																		withColor:[UIColor strawColor]];
 
+
+	size_t hieroSize = class_getInstanceSize([self class]);
+	size_t hieroViewSize = class_getInstanceSize([self.view class]);
+	size_t glyphSize = class_getInstanceSize([clonedGlyphButton class]);
+	
+	NSLog(@"Appaloosa: %zu %zu %zu", hieroSize, hieroViewSize, glyphSize);
+	
+
+	
 	[self.view addSubview:clonedGlyphButton];
 	
 	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragClone:)];
@@ -107,6 +118,8 @@
 				
 //				[animatedGlyphButton displayLinkToPoint:destination withFinishedBlock:^ {
 				[animatedGlyphButton bezierToPoint:destination withFinishedBlock:^ {
+//[animatedGlyphButton setValue:[UI] forKey:<#(NSString *)#>]
+					
 					[animatedGlyphButton removeFromSuperview];
 					[self.canvas addGlyph:animatedGlyphButton];
 				}];

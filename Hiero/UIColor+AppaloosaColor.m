@@ -1,14 +1,14 @@
 //
-//  RockyColorHelper.m
+//  UIColor+AppaloosaColor.m
 //  Hiero
 //
-//  Created by Dunc on 1/11/14.
+//  Created by Dunc on 1/27/14.
 //  Copyright (c) 2014 Mmyrmidons. All rights reserved.
 //
 
-#import "GlyphColor.h"
+#import "UIColor+AppaloosaColor.h"
 
-@implementation GlyphColor
+@implementation UIColor (AppaloosaColor)
 
 + (UIColor*)iceColor {
 	return [[UIColor alloc] initWithRed:102.0/255 green:255.0/255 blue:255.0/255 alpha:1.0];

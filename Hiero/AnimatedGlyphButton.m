@@ -41,14 +41,13 @@
 //	CGPoint controlPoint1 = CGPointMake(self.center.x + destination.x / 2, self.center.y + destination.y / 2);
 //	CGPoint controlPoint2 = CGPointMake(self.center.x + destination.x / 2, self.center.y + destination.y / 2);
 	
-	NSLog(@"Manners: %@ %@", NSStringFromCGPoint(self.center), NSStringFromCGPoint(destination));
-	
-	float controlFudge = 40.0;
-
-	CGPoint controlPoint1 = CGPointMake((self.center.x + destination.x) / 2 + controlFudge, (self.center.y + destination.y) / 2 + controlFudge);
-	CGPoint controlPoint2 = CGPointMake((self.center.x + destination.x) / 2 + controlFudge, (self.center.y + destination.y) / 2 + controlFudge);
-	
+//	float controlFudge = 40.0;
+//
+//	CGPoint controlPoint1 = CGPointMake((self.center.x + destination.x) / 2 + controlFudge, (self.center.y + destination.y) / 2 + controlFudge);
+//	CGPoint controlPoint2 = CGPointMake((self.center.x + destination.x) / 2 + controlFudge, (self.center.y + destination.y) / 2 + controlFudge);
+//	
 //	[path addCurveToPoint:destination controlPoint1:controlPoint1 controlPoint2:controlPoint2];
+
 	[path addLineToPoint:destination];
 	
 	CAKeyframeAnimation *pathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
@@ -78,8 +77,6 @@
 
 - (void)drawRect:(CGRect)rect {
 	if (self.animating) {
-		NSLog(@"Hi Appy: %@ %f %f", NSStringFromCGRect(self.frame), self.destination.x, self.destination.y);
-		
 //		float progressX = (self.frame.origin.x - self.destination.x) * 0.98;//self.duration;
 		
 		

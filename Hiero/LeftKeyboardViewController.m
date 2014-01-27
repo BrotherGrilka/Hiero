@@ -30,12 +30,12 @@
 
 	__block int r = 0;
     __block int z = 0;
-	__block int glyphTally = 6;
+	__block int glyphTally = 18;
 	
     [[GlyphHelper glyphs] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
 		GlyphButton *rockyGlyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake((z % 2) * 95, r * 95, 95, 95)
 																	andKey:key
-																 withColor:[GlyphColor yellowGreenColor]];
+																 withColor:[UIColor yellowGreenColor]];
 		
 		[self.view addSubview:rockyGlyphButton];
 		

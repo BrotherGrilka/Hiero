@@ -44,19 +44,20 @@
 		B42127181888465B005DC915 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B42126FB1888465B005DC915 /* MagicalRecord.m */; };
 		B44C15261888B9C500D81694 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44C15251888B9C500D81694 /* Images.xcassets */; };
 		B479818D188F2F0100B12A79 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = B479818C188F2F0100B12A79 /* iTunesArtwork */; };
+		B47AA1731896B9BC007F42E1 /* UIColor+AppaloosaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B47AA1721896B9BC007F42E1 /* UIColor+AppaloosaColor.m */; };
 		B4BD946E1880D2DF0039AAF3 /* Hiero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BD946D1880D2DF0039AAF3 /* Hiero.storyboard */; };
 		B4BD94761880D4E80039AAF3 /* HieroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BD94751880D4E80039AAF3 /* HieroViewController.m */; };
 		B4BD94791880D56F0039AAF3 /* HieroAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4BD94781880D56F0039AAF3 /* HieroAppDelegate.m */; };
 		B4C748F61895939600A43414 /* TopKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C748F51895939600A43414 /* TopKeyboardViewController.m */; };
 		B4C748F9189593EC00A43414 /* LeftKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C748F8189593EC00A43414 /* LeftKeyboardViewController.m */; };
+		B4C749061895A75D00A43414 /* Strut.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C749051895A75D00A43414 /* Strut.m */; };
+		B4C7490C1895A75D00A43414 /* Glyph.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C7490B1895A75D00A43414 /* Glyph.m */; };
 		B4D033261889F54100168AA9 /* MannysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D033241889F54100168AA9 /* MannysViewController.m */; };
 		B4D033271889F54100168AA9 /* MannysViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D033251889F54100168AA9 /* MannysViewController.xib */; };
 		B4D3CA351893E8C200618BD2 /* Manners29.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D3CA341893E8C200618BD2 /* Manners29.png */; };
 		B4D3CA371893F19000618BD2 /* Manners80.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D3CA361893F19000618BD2 /* Manners80.png */; };
 		B4D3CA431893FE8D00618BD2 /* GlyphStrut.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3CA411893FE8D00618BD2 /* GlyphStrut.m */; };
 		B4D3CA441893FE8D00618BD2 /* GlyphStrut.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D3CA421893FE8D00618BD2 /* GlyphStrut.xib */; };
-		B4D3CA4D1894135E00618BD2 /* Glyph.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3CA4C1894135E00618BD2 /* Glyph.m */; };
-		B4D3CA5018941D0100618BD2 /* Strut.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3CA4F18941D0100618BD2 /* Strut.m */; };
 		B4D3CA521894415700618BD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D3CA511894415700618BD2 /* QuartzCore.framework */; };
 		B4D3CA5C18944E2100618BD2 /* AnimatedGlyphButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D3CA5B18944E2100618BD2 /* AnimatedGlyphButton.m */; };
 		CA6879FA14115A090038C615 /* FrogFlower.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CA6879F914115A090038C615 /* FrogFlower.JPG */; };
@@ -145,6 +146,8 @@
 		B421271E1888955B005DC915 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B44C15251888B9C500D81694 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B479818C188F2F0100B12A79 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		B47AA1711896B9BC007F42E1 /* UIColor+AppaloosaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppaloosaColor.h"; sourceTree = "<group>"; };
+		B47AA1721896B9BC007F42E1 /* UIColor+AppaloosaColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppaloosaColor.m"; sourceTree = "<group>"; };
 		B4BD946D1880D2DF0039AAF3 /* Hiero.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hiero.storyboard; sourceTree = "<group>"; };
 		B4BD94741880D4E80039AAF3 /* HieroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HieroViewController.h; sourceTree = "<group>"; };
 		B4BD94751880D4E80039AAF3 /* HieroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HieroViewController.m; sourceTree = "<group>"; };
@@ -154,6 +157,11 @@
 		B4C748F51895939600A43414 /* TopKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopKeyboardViewController.m; sourceTree = "<group>"; };
 		B4C748F7189593EC00A43414 /* LeftKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftKeyboardViewController.h; sourceTree = "<group>"; };
 		B4C748F8189593EC00A43414 /* LeftKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftKeyboardViewController.m; sourceTree = "<group>"; };
+		B4C748FA1895A1E700A43414 /* GlyphsII.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GlyphsII.xcdatamodel; sourceTree = "<group>"; };
+		B4C749041895A75D00A43414 /* Strut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strut.h; sourceTree = "<group>"; };
+		B4C749051895A75D00A43414 /* Strut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Strut.m; sourceTree = "<group>"; };
+		B4C7490A1895A75D00A43414 /* Glyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glyph.h; sourceTree = "<group>"; };
+		B4C7490B1895A75D00A43414 /* Glyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glyph.m; sourceTree = "<group>"; };
 		B4D033231889F54100168AA9 /* MannysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MannysViewController.h; sourceTree = "<group>"; };
 		B4D033241889F54100168AA9 /* MannysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MannysViewController.m; sourceTree = "<group>"; };
 		B4D033251889F54100168AA9 /* MannysViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MannysViewController.xib; sourceTree = "<group>"; };
@@ -162,10 +170,6 @@
 		B4D3CA401893FE8D00618BD2 /* GlyphStrut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphStrut.h; sourceTree = "<group>"; };
 		B4D3CA411893FE8D00618BD2 /* GlyphStrut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphStrut.m; sourceTree = "<group>"; };
 		B4D3CA421893FE8D00618BD2 /* GlyphStrut.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlyphStrut.xib; sourceTree = "<group>"; };
-		B4D3CA4B1894135E00618BD2 /* Glyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glyph.h; sourceTree = "<group>"; };
-		B4D3CA4C1894135E00618BD2 /* Glyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Glyph.m; sourceTree = "<group>"; };
-		B4D3CA4E18941D0100618BD2 /* Strut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strut.h; sourceTree = "<group>"; };
-		B4D3CA4F18941D0100618BD2 /* Strut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Strut.m; sourceTree = "<group>"; };
 		B4D3CA511894415700618BD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B4D3CA5A18944E2100618BD2 /* AnimatedGlyphButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedGlyphButton.h; sourceTree = "<group>"; };
 		B4D3CA5B18944E2100618BD2 /* AnimatedGlyphButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedGlyphButton.m; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			children = (
 				B412A4201881E2DC005444C9 /* UIStoryboard+ViewControllerById.h */,
 				B412A4211881E2DC005444C9 /* UIStoryboard+ViewControllerById.m */,
+				B47AA1711896B9BC007F42E1 /* UIColor+AppaloosaColor.h */,
+				B47AA1721896B9BC007F42E1 /* UIColor+AppaloosaColor.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -233,10 +239,10 @@
 		B421261A18883D08005DC915 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B4D3CA4E18941D0100618BD2 /* Strut.h */,
-				B4D3CA4F18941D0100618BD2 /* Strut.m */,
-				B4D3CA4B1894135E00618BD2 /* Glyph.h */,
-				B4D3CA4C1894135E00618BD2 /* Glyph.m */,
+				B4C7490A1895A75D00A43414 /* Glyph.h */,
+				B4C7490B1895A75D00A43414 /* Glyph.m */,
+				B4C749041895A75D00A43414 /* Strut.h */,
+				B4C749051895A75D00A43414 /* Strut.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 				B42127151888465B005DC915 /* MagicalRecord+Options.m in Sources */,
 				B421270C1888465B005DC915 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				CAB2CC54140A7F1100862504 /* main.m in Sources */,
+				B47AA1731896B9BC007F42E1 /* UIColor+AppaloosaColor.m in Sources */,
 				B421261518883C1E005DC915 /* Glyphs.xcdatamodeld in Sources */,
 				B42127161888465B005DC915 /* MagicalRecord+Setup.m in Sources */,
 				B42127041888465B005DC915 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
@@ -555,7 +562,9 @@
 				B4C748F61895939600A43414 /* TopKeyboardViewController.m in Sources */,
 				B412A43418820F82005444C9 /* Konstants.m in Sources */,
 				B42127111888465B005DC915 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				B4C749061895A75D00A43414 /* Strut.m in Sources */,
 				B4D033261889F54100168AA9 /* MannysViewController.m in Sources */,
+				B4C7490C1895A75D00A43414 /* Glyph.m in Sources */,
 				B42127051888465B005DC915 /* NSString+MagicalDataImport.m in Sources */,
 				B412A41B1881BD33005444C9 /* CanvasViewController.m in Sources */,
 				B4BD94761880D4E80039AAF3 /* HieroViewController.m in Sources */,
@@ -564,7 +573,6 @@
 				B4D3CA5C18944E2100618BD2 /* AnimatedGlyphButton.m in Sources */,
 				B42127101888465B005DC915 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				B421270D1888465B005DC915 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
-				B4D3CA5018941D0100618BD2 /* Strut.m in Sources */,
 				B42127001888465B005DC915 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				B42127121888465B005DC915 /* MagicalRecord+Actions.m in Sources */,
 				B42127181888465B005DC915 /* MagicalRecord.m in Sources */,
@@ -574,7 +582,6 @@
 				B412A4301881EC2A005444C9 /* GlyphButton.m in Sources */,
 				B42126FF1888465B005DC915 /* MagicalImportFunctions.m in Sources */,
 				B412A4181881AE43005444C9 /* KeyboardViewController.m in Sources */,
-				B4D3CA4D1894135E00618BD2 /* Glyph.m in Sources */,
 				B412A4261881E69A005444C9 /* GlyphHelper.m in Sources */,
 				B42127061888465B005DC915 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				B4C748F9189593EC00A43414 /* LeftKeyboardViewController.m in Sources */,
@@ -709,9 +716,10 @@
 		B421261318883C1E005DC915 /* Glyphs.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B4C748FA1895A1E700A43414 /* GlyphsII.xcdatamodel */,
 				B421261418883C1E005DC915 /* Glyphs.xcdatamodel */,
 			);
-			currentVersion = B421261418883C1E005DC915 /* Glyphs.xcdatamodel */;
+			currentVersion = B4C748FA1895A1E700A43414 /* GlyphsII.xcdatamodel */;
 			name = Glyphs.xcdatamodeld;
 			path = ../Glyphs.xcdatamodeld;
 			sourceTree = "<group>";

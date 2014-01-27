@@ -13,7 +13,7 @@
     #import <Foundation/Foundation.h>
 	#import <CoreData/CoreData.h>
 	#import "Konstants.h"
-	#import "GlyphColor.h"
+	#import "UIColor+AppaloosaColor.h"
 	#import "GlyphHelper.h"
 	#import "CoreData+MagicalRecord.h"
 #endif
