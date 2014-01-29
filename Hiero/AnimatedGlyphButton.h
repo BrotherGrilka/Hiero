@@ -8,8 +8,6 @@
 
 #import "GlyphButton.h"
 
-typedef void (^AnimationFinishedBlock)();
-
 @interface AnimatedGlyphButton : GlyphButton
 
 - (void)displayLinkToPoint:(CGPoint)destination withFinishedBlock:(AnimationFinishedBlock)finished;

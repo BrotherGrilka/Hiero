@@ -15,5 +15,7 @@
 + (UIColor*)cantaloupeColor;
 + (UIColor*)yellowGreenColor;
 + (UIColor*)orangeRedColor;
++ (UIColor*)indigoColor;
++ (UIColor*)deepPinkColor;
 
 @end

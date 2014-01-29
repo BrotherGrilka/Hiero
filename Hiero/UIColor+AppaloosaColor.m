@@ -30,4 +30,12 @@
 	return  [[UIColor alloc] initWithRed:255.0/255 green:69.0/255 blue:0.0/255 alpha:1.0];
 }
 
++ (UIColor*)indigoColor {
+	return  [[UIColor alloc] initWithRed:75.0/255 green:0.0/255 blue:130.0/255 alpha:1.0];
+}
+
++ (UIColor*)deepPinkColor {
+	return  [[UIColor alloc] initWithRed:255.0/255 green:20.0/255 blue:147.0/255 alpha:1.0];
+}
+
 @end

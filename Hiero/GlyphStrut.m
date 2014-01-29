@@ -14,6 +14,9 @@
 @interface GlyphStrut ()
 
 @property (nonatomic, strong) Strut *strut;
+@property (nonatomic, weak) IBOutlet UIView *leftIndicator;
+@property (nonatomic, weak) IBOutlet UIView *bottomIndicator;
+@property (nonatomic, weak) IBOutlet UIView *rightIndicator;
 
 @end
 
@@ -60,20 +63,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)renderStrut {
-	for (UIView *glyphView in self.view.subviews)
-		[glyphView removeFromSuperview];
-	
-	__block int i = 0;
+	for (UIView *view in self.view.subviews)
+		if ([view isKindOfClass:[GlyphButton class]])
+			[view removeFromSuperview];
 	
 	NSSortDescriptor *ascending = [[NSSortDescriptor alloc] initWithKey:@"index" ascending:YES];
 	NSArray *sortedGlyphs = [self.strut.glyphs sortedArrayUsingDescriptors:[NSArray arrayWithObject:ascending]];
 	
 	[sortedGlyphs enumerateObjectsUsingBlock:^(Glyph *glyph, NSUInteger idx, BOOL *stop) {
-		GlyphButton *glyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake(0.0, i++ * 95.0, 95.0, 95.0)
+		GlyphButton *glyphButton = [[GlyphButton alloc] initWithFrame:CGRectMake(0.0, idx * 95.0, 95.0, 95.0)
 															   andKey:glyph.key
 															withColor:[UIColor cantaloupeColor]];
 		[self.view addSubview:glyphButton];
@@ -89,7 +90,7 @@
 	glyph.originX = [NSNumber numberWithFloat:glyphButton.frame.origin.x];
 	glyph.originY = [NSNumber numberWithFloat:glyphButton.frame.origin.y];
 	glyph.index = [NSNumber numberWithInt:[self.strut.glyphs count]];
-	
+		
 	[self.strut addGlyphsObject:glyph];
 
 	[[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];

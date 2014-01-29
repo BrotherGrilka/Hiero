@@ -42,6 +42,8 @@
 }
 
 - (void)addGlyph:(GlyphButton *)glyphButton {
+	NSLog(@"Manners: %@ %@", glyphButton, self.focusedStrut);
+	
 	if (self.focusedStrut)
 		[self.focusedStrut addGlyph:glyphButton];
 	else {

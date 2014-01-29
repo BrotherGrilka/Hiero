@@ -8,6 +8,13 @@
 
 #import "GlyphButton.h"
 
+@interface GlyphButton()
+
+@property (nonatomic, assign) CGPoint destination;
+@property (nonatomic, strong) AnimationFinishedBlock finished;
+
+@end
+
 @implementation GlyphButton
 
 - (id)initWithFrame:(CGRect)frame
@@ -39,6 +46,27 @@
 	
 	[self setTitle:[[GlyphHelper unicodes] objectAtIndex:hexen - 0x13000] forState:UIControlStateNormal];
 	[self setTitleColor:color forState:UIControlStateNormal];
+}
+
+- (void)bezierToPoint:(CGPoint)destination withFinishedBlock:(AnimationFinishedBlock)finished {
+	self.finished = [finished copy];
+	self.destination = destination;
+	
+	UIBezierPath *path  = [UIBezierPath bezierPath];
+	[path moveToPoint:CGPointMake(self.center.x, self.center.y)];
+	[path addLineToPoint:destination];
+	
+	CAKeyframeAnimation *pathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+	pathAnimation.duration = 0.4;
+	pathAnimation.path = path.CGPath;
+	pathAnimation.removedOnCompletion = YES;
+	pathAnimation.delegate = self;
+	
+	[self.layer addAnimation:pathAnimation forKey:@"pathAnimation"];
+}
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+	self.finished();
 }
 
 /*

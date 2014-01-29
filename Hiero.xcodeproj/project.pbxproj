@@ -11,7 +11,6 @@
 		B412A41B1881BD33005444C9 /* CanvasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A41A1881BD33005444C9 /* CanvasViewController.m */; };
 		B412A4221881E2DC005444C9 /* UIStoryboard+ViewControllerById.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A4211881E2DC005444C9 /* UIStoryboard+ViewControllerById.m */; };
 		B412A4261881E69A005444C9 /* GlyphHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A4251881E69A005444C9 /* GlyphHelper.m */; };
-		B412A42D1881EA31005444C9 /* GlyphColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A42C1881EA31005444C9 /* GlyphColor.m */; };
 		B412A4301881EC2A005444C9 /* GlyphButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A42F1881EC2A005444C9 /* GlyphButton.m */; };
 		B412A43418820F82005444C9 /* Konstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B412A43318820F82005444C9 /* Konstants.m */; };
 		B421261518883C1E005DC915 /* Glyphs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B421261318883C1E005DC915 /* Glyphs.xcdatamodeld */; };
@@ -43,6 +42,8 @@
 		B42127171888465B005DC915 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B42126F91888465B005DC915 /* MagicalRecord+ShorthandSupport.m */; };
 		B42127181888465B005DC915 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = B42126FB1888465B005DC915 /* MagicalRecord.m */; };
 		B44C15261888B9C500D81694 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44C15251888B9C500D81694 /* Images.xcassets */; };
+		B4543B7418981BC30045E67D /* GlyphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4543B7218981BC30045E67D /* GlyphViewController.m */; };
+		B4543B7518981BC30045E67D /* GlyphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4543B7318981BC30045E67D /* GlyphViewController.xib */; };
 		B479818D188F2F0100B12A79 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = B479818C188F2F0100B12A79 /* iTunesArtwork */; };
 		B47AA1731896B9BC007F42E1 /* UIColor+AppaloosaColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B47AA1721896B9BC007F42E1 /* UIColor+AppaloosaColor.m */; };
 		B4BD946E1880D2DF0039AAF3 /* Hiero.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4BD946D1880D2DF0039AAF3 /* Hiero.storyboard */; };
@@ -80,8 +81,6 @@
 		B412A4211881E2DC005444C9 /* UIStoryboard+ViewControllerById.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewControllerById.m"; sourceTree = "<group>"; };
 		B412A4241881E69A005444C9 /* GlyphHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphHelper.h; sourceTree = "<group>"; };
 		B412A4251881E69A005444C9 /* GlyphHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphHelper.m; sourceTree = "<group>"; };
-		B412A42B1881EA31005444C9 /* GlyphColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphColor.h; sourceTree = "<group>"; };
-		B412A42C1881EA31005444C9 /* GlyphColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphColor.m; sourceTree = "<group>"; };
 		B412A42E1881EC2A005444C9 /* GlyphButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphButton.h; sourceTree = "<group>"; };
 		B412A42F1881EC2A005444C9 /* GlyphButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphButton.m; sourceTree = "<group>"; };
 		B412A43218820F82005444C9 /* Konstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Konstants.h; sourceTree = "<group>"; };
@@ -145,6 +144,9 @@
 		B42126FE1888465B005DC915 /* MagicalRecordVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordVersion.h; sourceTree = "<group>"; };
 		B421271E1888955B005DC915 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B44C15251888B9C500D81694 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B4543B7118981BC30045E67D /* GlyphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphViewController.h; sourceTree = "<group>"; };
+		B4543B7218981BC30045E67D /* GlyphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphViewController.m; sourceTree = "<group>"; };
+		B4543B7318981BC30045E67D /* GlyphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlyphViewController.xib; sourceTree = "<group>"; };
 		B479818C188F2F0100B12A79 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		B47AA1711896B9BC007F42E1 /* UIColor+AppaloosaColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppaloosaColor.h"; sourceTree = "<group>"; };
 		B47AA1721896B9BC007F42E1 /* UIColor+AppaloosaColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppaloosaColor.m"; sourceTree = "<group>"; };
@@ -374,14 +376,15 @@
 		B421271D188866B1005DC915 /* Glyphs */ = {
 			isa = PBXGroup;
 			children = (
-				B412A42B1881EA31005444C9 /* GlyphColor.h */,
-				B412A42C1881EA31005444C9 /* GlyphColor.m */,
 				B412A4241881E69A005444C9 /* GlyphHelper.h */,
 				B412A4251881E69A005444C9 /* GlyphHelper.m */,
 				B412A42E1881EC2A005444C9 /* GlyphButton.h */,
 				B412A42F1881EC2A005444C9 /* GlyphButton.m */,
 				B4D3CA5A18944E2100618BD2 /* AnimatedGlyphButton.h */,
 				B4D3CA5B18944E2100618BD2 /* AnimatedGlyphButton.m */,
+				B4543B7118981BC30045E67D /* GlyphViewController.h */,
+				B4543B7218981BC30045E67D /* GlyphViewController.m */,
+				B4543B7318981BC30045E67D /* GlyphViewController.xib */,
 			);
 			name = Glyphs;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				CA84B4A2140EBDB500CBC561 /* Gardiner313.ttf in Resources */,
 				B4D3CA441893FE8D00618BD2 /* GlyphStrut.xib in Resources */,
 				B4D3CA351893E8C200618BD2 /* Manners29.png in Resources */,
+				B4543B7518981BC30045E67D /* GlyphViewController.xib in Resources */,
 				B4D3CA371893F19000618BD2 /* Manners80.png in Resources */,
 				CA6879FA14115A090038C615 /* FrogFlower.JPG in Resources */,
 				B4D033271889F54100168AA9 /* MannysViewController.xib in Resources */,
@@ -549,6 +553,7 @@
 				B42127141888465B005DC915 /* MagicalRecord+iCloud.m in Sources */,
 				B42127171888465B005DC915 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				B421270B1888465B005DC915 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				B4543B7418981BC30045E67D /* GlyphViewController.m in Sources */,
 				B42127091888465B005DC915 /* NSManagedObject+MagicalRecord.m in Sources */,
 				B42127011888465B005DC915 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				B42127151888465B005DC915 /* MagicalRecord+Options.m in Sources */,
@@ -589,7 +594,6 @@
 				B421270E1888465B005DC915 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				B421270F1888465B005DC915 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				B42127071888465B005DC915 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				B412A42D1881EA31005444C9 /* GlyphColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,9 +13,8 @@
 #import "TopKeyboardViewController.h"
 #import "LeftKeyboardViewController.h"
 #import "MannysViewController.h"
-#import "AnimatedGlyphButton.h"
+#import "GlyphButton.h"
 #import "GlyphStrut.h"
-
 
 @interface HieroViewController ()
 
@@ -42,8 +41,8 @@
 	
 	self.droppedGlyphs = 0;
 
-	self.topKeyboard = self.childViewControllers[0];
-	self.canvas = self.childViewControllers[1];
+	self.canvas = self.childViewControllers[0];
+	self.topKeyboard = self.childViewControllers[1];
 	self.leftKeyboard = self.childViewControllers[2];
 		
 	[self addObserver:self.topKeyboard forKeyPath:@"droppedGlyphs" options:0 context:NULL];
@@ -70,36 +69,16 @@
 	NSLog(@"Copy Miss Tikky from HieroViewController: %@", sender);
 }
 
-
-
-- (void)cloneGlyphButton:(GlyphButton *)glyphButton fromKeyboard:(KeyboardViewController *)keyboard {
-	AnimatedGlyphButton *clonedGlyphButton = [[AnimatedGlyphButton alloc] initWithFrame:CGRectMake(glyphButton.frame.origin.x + keyboard.view.superview.frame.origin.x, glyphButton.frame.origin.y + keyboard.view.superview.frame.origin.y, 95, 95)
-																		   andKey:glyphButton.key
-																		withColor:[UIColor strawColor]];
-
-
-	size_t hieroSize = class_getInstanceSize([self class]);
-	size_t hieroViewSize = class_getInstanceSize([self.view class]);
-	size_t glyphSize = class_getInstanceSize([clonedGlyphButton class]);
-	
-	NSLog(@"Appaloosa: %zu %zu %zu", hieroSize, hieroViewSize, glyphSize);
-	
-
-	
-	[self.view addSubview:clonedGlyphButton];
-	
-	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragClone:)];
-//    [panRecognizer setMinimumNumberOfTouches:1];
-//    [panRecognizer setMaximumNumberOfTouches:3];
-    [clonedGlyphButton addGestureRecognizer:panRecognizer];
+- (void)setzenGlyphPanning:(UIView *)glyphView forKeyboard:(KeyboardViewController *)keyboard {
+	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragGlyph:)];
+    [glyphView addGestureRecognizer:panRecognizer];
 }
 
-- (void)dragClone:(UIPanGestureRecognizer *)recognizer {
+- (void)dragGlyph:(UIPanGestureRecognizer *)recognizer {
+	CGRect recognizerPseudoFrame = CGRectMake(recognizer.view.frame.origin.x + recognizer.view.superview.superview.frame.origin.x, recognizer.view.frame.origin.y + recognizer.view.superview.superview.frame.origin.y, recognizer.view.frame.size.width, recognizer.view.frame.size.height);
+
 	if (recognizer.state == UIGestureRecognizerStateEnded) {
-		if (recognizer.view.frame.origin.x < self.canvas.view.superview.frame.origin.x
-			|| recognizer.view.frame.origin.x + recognizer.view.frame.size.width > self.canvas.view.superview.frame.origin.x + self.canvas.view.superview.frame.size.width
-			|| recognizer.view.frame.origin.y < self.canvas.view.superview.frame.origin.y
-			|| recognizer.view.frame.origin.y + recognizer.view.frame.size.height > self.canvas.view.superview.frame.origin.y + self.canvas.view.superview.frame.size.height)
+		if (!CGRectContainsRect(self.canvas.view.superview.frame, recognizerPseudoFrame))
 				[UIView animateWithDuration:0.5
 									  delay:0.0
 									options:nil
@@ -111,23 +90,18 @@
 									 self.droppedGlyphs = [NSNumber numberWithInt: [self.droppedGlyphs intValue] + 1];
 								 }];
 		else {
-			AnimatedGlyphButton *animatedGlyphButton = (AnimatedGlyphButton *) recognizer.view;
-			
+			GlyphButton *droppedGlyphButton = (GlyphButton *) recognizer.view;
+
 			if (self.canvas.focusedStrut) {
-				CGPoint destination = CGPointMake(self.canvas.view.superview.frame.origin.x + self.canvas.focusedStrut.view.center.x, self.canvas.view.superview.frame.origin.y + self.canvas.focusedStrut.view.frame.origin.y + self.canvas.focusedStrut.view.frame.size.height + animatedGlyphButton.frame.size.height / 2);
-				
-//				[animatedGlyphButton displayLinkToPoint:destination withFinishedBlock:^ {
-				[animatedGlyphButton bezierToPoint:destination withFinishedBlock:^ {
-//[animatedGlyphButton setValue:[UI] forKey:<#(NSString *)#>]
-					
-					[animatedGlyphButton removeFromSuperview];
-					[self.canvas addGlyph:animatedGlyphButton];
+				CGPoint destination = CGPointMake(self.canvas.view.superview.frame.origin.x + self.canvas.focusedStrut.view.center.x - recognizer.view.superview.superview.frame.origin.x, self.canvas.view.superview.frame.origin.y + self.canvas.focusedStrut.view.frame.origin.y + self.canvas.focusedStrut.view.frame.size.height + droppedGlyphButton.frame.size.height / 2 - recognizer.view.superview.superview.frame.origin.y);
+
+				[droppedGlyphButton bezierToPoint:destination withFinishedBlock:^ {
+					[self hinzufugenGlyphToCanvas:droppedGlyphButton];
 				}];
 			} else {
-				[self.canvas addGlyph:animatedGlyphButton];
-				[animatedGlyphButton removeFromSuperview];
+				[droppedGlyphButton setFrame:recognizerPseudoFrame];
+				[self hinzufugenGlyphToCanvas:droppedGlyphButton];
 			}
-				
 		}
 		
 		for (UIGestureRecognizer *gestureRecognizer in recognizer.view.gestureRecognizers)
@@ -135,25 +109,45 @@
 	} else {
 		CGPoint translation = [recognizer translationInView:self.view];
 		CGRect recognizerFrame = recognizer.view.frame;
+		CGRect recognizerPseudoFrame = CGRectMake(recognizer.view.frame.origin.x + recognizer.view.superview.superview.frame.origin.x, recognizer.view.frame.origin.y + recognizer.view.superview.superview.frame.origin.y, recognizer.view.frame.size.width, recognizer.view.frame.size.height);
 		recognizerFrame.origin.x += translation.x;
 		recognizerFrame.origin.y += translation.y;
+
 		
-		if (CGRectContainsRect(self.view.bounds, recognizerFrame))
+		if (CGRectContainsRect(self.view.bounds, recognizerPseudoFrame))
 			recognizer.view.frame = recognizerFrame;
-		else {
-			if (recognizerFrame.origin.y < self.view.bounds.origin.y)
-				recognizerFrame.origin.y = 0;
-			else if (recognizerFrame.origin.y + recognizerFrame.size.height > self.view.bounds.size.height)
-				recognizerFrame.origin.y = self.view.bounds.size.height - recognizerFrame.size.height;
-			
-			if (recognizerFrame.origin.x < self.view.bounds.origin.x)
-				recognizerFrame.origin.x = 0;
-			else if (recognizerFrame.origin.x + recognizerFrame.size.width > self.view.bounds.size.width)
-				recognizerFrame.origin.x = self.view.bounds.size.width - recognizerFrame.size.width;
-		}
 		
 		[recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+
+		if (recognizer.state == UIGestureRecognizerStateBegan) {
+			GlyphButton *panningGlyphButton = (GlyphButton*) recognizer.view;
+			GlyphButton *rockyGlyphButton = [[GlyphButton alloc] initWithFrame:panningGlyphButton.frame
+																		andKey:panningGlyphButton.key
+																	 withColor:panningGlyphButton.titleLabel.textColor];
+
+
+			NSLog(@"Hi Blaccky: %@ %@", NSStringFromCGRect(self.topKeyboard.view.frame), NSStringFromCGRect(recognizerPseudoFrame));
+
+			
+			if (CGRectContainsRect(self.topKeyboard.view.superview.frame, recognizerPseudoFrame))
+				[self hinzufugenGlyph:rockyGlyphButton toKeyboard:self.topKeyboard];
+			else
+				[self hinzufugenGlyph:rockyGlyphButton toKeyboard:self.leftKeyboard];
+				
+			[panningGlyphButton setTitleColor:[UIColor strawColor] forState:UIControlStateNormal];
+		}
 	}
+}
+
+- (void)hinzufugenGlyph:(GlyphButton*)glyphButton toKeyboard:(KeyboardViewController*)keyboard {
+	[keyboard.view addSubview:glyphButton];
+	[keyboard.view sendSubviewToBack:glyphButton];
+	[self setzenGlyphPanning:glyphButton forKeyboard:keyboard];
+}
+
+- (void)hinzufugenGlyphToCanvas:(GlyphButton*)droppedGlyphButton {
+	[self.canvas addGlyph:droppedGlyphButton];
+	[droppedGlyphButton removeFromSuperview];
 }
 
 - (IBAction)clearGlyphs:(id)sender {

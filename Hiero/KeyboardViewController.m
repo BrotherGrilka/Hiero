@@ -31,13 +31,6 @@
     [super viewDidLoad];
 }
 
-- (void)handleGlyphTouch:(id)sender {
-	GlyphButton *glyphButton = (GlyphButton *) sender;
-	HieroViewController *hieroViewController = (HieroViewController *) self.parentViewController;
-
-	[hieroViewController cloneGlyphButton:glyphButton fromKeyboard:self];
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change

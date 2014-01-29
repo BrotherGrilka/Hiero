@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSNumber *droppedGlyphs;
 
-- (void)cloneGlyphButton:(GlyphButton *)glyphButton fromKeyboard:(KeyboardViewController *)keyboard;
 - (IBAction)clearGlyphs:(id)sender;
+- (void)setzenGlyphPanning:(UIView *)glyphView forKeyboard:(KeyboardViewController *)keyboard;
 
 @end

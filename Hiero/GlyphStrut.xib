@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GlyphStrut">
             <connections>
+                <outlet property="bottomIndicator" destination="tsm-zV-TTV" id="lQY-M7-icV"/>
+                <outlet property="leftIndicator" destination="cA7-xW-ny7" id="cdi-W8-Sdl"/>
+                <outlet property="rightIndicator" destination="9Ai-es-qyR" id="ZUW-N0-E0b"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -13,6 +16,23 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cA7-xW-ny7" userLabel="Left Indicator View">
+                    <rect key="frame" x="0.0" y="0.0" width="1" height="95"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.078431372549019607" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-zV-TTV" userLabel="Bottom Indicator View">
+                    <rect key="frame" x="0.0" y="94" width="95" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="1" green="0.078431372550000003" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ai-es-qyR" userLabel="Right Indicator View">
+                    <rect key="frame" x="94" y="0.0" width="1" height="95"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.078431372550000003" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

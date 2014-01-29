@@ -16,25 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-3e-fwH">
-                                <rect key="frame" x="226" y="29" width="524" height="190"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="k9B-sZ-11I"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="zEd-bU-g1p" kind="embed" id="zZz-b7-yFL"/>
-                                </connections>
-                            </containerView>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-AH-CLe">
-                                <rect key="frame" x="226" y="237" width="524" height="769"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="b3s-D9-mrD" kind="embed" id="5NL-13-hAx"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuM-W6-x4M">
                                 <rect key="frame" x="73" y="84" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,7 +28,26 @@
                                     <action selector="clearGlyphs:" destination="TJB-Ui-Fc5" eventType="touchUpInside" id="44t-gy-pXm"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-TN-AE1">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-AH-CLe" userLabel="Canvas Container View">
+                                <rect key="frame" x="226" y="237" width="524" height="769"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="b3s-D9-mrD" kind="embed" id="5NL-13-hAx"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-3e-fwH" userLabel="Top Keyboard Container View">
+                                <rect key="frame" x="226" y="29" width="524" height="190"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="k9B-sZ-11I"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="zEd-bU-g1p" kind="embed" id="zZz-b7-yFL"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-TN-AE1" userLabel="Left Keyboard Container View">
                                 <rect key="frame" x="18" y="237" width="190" height="769"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +89,7 @@
                         <viewControllerLayoutGuide type="top" id="8k1-Ih-2a8"/>
                         <viewControllerLayoutGuide type="bottom" id="pCQ-HK-Kms"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Z94-ss-hMz">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="Z94-ss-hMz">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,7 +145,7 @@
                         <viewControllerLayoutGuide type="top" id="B9e-Nh-dJT"/>
                         <viewControllerLayoutGuide type="bottom" id="W12-Si-Kfc"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ShL-yJ-oiL">
+                    <view key="view" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ShL-yJ-oiL">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,7 +164,7 @@
                         <viewControllerLayoutGuide type="top" id="KvI-AD-OWn"/>
                         <viewControllerLayoutGuide type="bottom" id="lhi-bz-nNm"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6fs-3Z-1Eb">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="6fs-3Z-1Eb">
                         <rect key="frame" x="0.0" y="0.0" width="190" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>

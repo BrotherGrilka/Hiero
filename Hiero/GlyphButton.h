@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^AnimationFinishedBlock)();
+
 @interface GlyphButton : UIButton
 
 @property (nonatomic, strong) NSString *key;
 
 - (id)initWithFrame:(CGRect)frame andKey:(NSString *)key withColor:(UIColor *)color;
 - (void)setTitle:(NSString *)key withColor:(UIColor *)color;
+- (void)bezierToPoint:(CGPoint)destination withFinishedBlock:(AnimationFinishedBlock)finished;
 
 @end
