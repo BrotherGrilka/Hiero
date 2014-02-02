@@ -17,5 +17,9 @@
 + (UIColor*)orangeRedColor;
 + (UIColor*)indigoColor;
 + (UIColor*)deepPinkColor;
++ (UIColor*)jetColor;
++ (UIColor*)davysGrayColor;
++ (UIColor*)taupeColor;
++ (UIColor*)charcoalColor;
 
 @end

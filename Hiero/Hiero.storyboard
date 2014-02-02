@@ -59,7 +59,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.50196081399917603" green="0.25098040699958801" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.038566588089999999" blue="0.11995453120000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="6Lt-3e-fwH" secondAttribute="trailing" constant="18" id="9IL-j9-ZIv"/>
@@ -92,7 +92,7 @@
                     <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="Z94-ss-hMz">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
@@ -148,7 +148,7 @@
                     <view key="view" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ShL-yJ-oiL">
                         <rect key="frame" x="0.0" y="0.0" width="524" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.28235294119999998" green="0.23529411759999999" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                 </viewController>
@@ -167,7 +167,7 @@
                     <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="6fs-3Z-1Eb">
                         <rect key="frame" x="0.0" y="0.0" width="190" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.10318090582278627" green="0.12549019607843137" blue="0.074995418017171842" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                     </view>

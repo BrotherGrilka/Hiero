@@ -45,7 +45,7 @@
 																 withColor:[UIColor yellowGreenColor]];
 
 		[self.view addSubview:rockyGlyphButton];
-		[hieroViewController setzenGlyphPanning:rockyGlyphButton forKeyboard:self];
+		[hieroViewController setzenGlyphPanning:rockyGlyphButton];
 
 		z++;
 		NSArray *modArgs = [NSArray arrayWithObjects: [NSExpression expressionForConstantValue:[NSNumber numberWithInteger:z]], [NSExpression expressionForConstantValue:[NSNumber numberWithInteger:2]], nil];

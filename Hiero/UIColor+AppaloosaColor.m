@@ -38,4 +38,20 @@
 	return  [[UIColor alloc] initWithRed:255.0/255 green:20.0/255 blue:147.0/255 alpha:1.0];
 }
 
++ (UIColor*)jetColor {
+	return  [[UIColor alloc] initWithRed:52.0/255 green:52.0/255 blue:52.0/255 alpha:1.0];
+}
+
++ (UIColor*)davysGrayColor {
+	return  [[UIColor alloc] initWithRed:85.0/255 green:85.0/255 blue:85.0/255 alpha:1.0];
+}
+
++ (UIColor*)taupeColor {
+	return  [[UIColor alloc] initWithRed:72.0/255 green:60.0/255 blue:50.0/255 alpha:1.0];
+}
+
++ (UIColor*)charcoalColor {
+	return  [[UIColor alloc] initWithRed:54.0/255 green:69.0/255 blue:79.0/255 alpha:1.0];
+}
+
 @end

@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSNumber *droppedGlyphs;
 
 - (IBAction)clearGlyphs:(id)sender;
-- (void)setzenGlyphPanning:(UIView *)glyphView forKeyboard:(KeyboardViewController *)keyboard;
+- (void)setzenGlyphPanning:(UIView *)glyphView;
 
 @end

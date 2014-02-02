@@ -69,7 +69,7 @@
 	NSLog(@"Copy Miss Tikky from HieroViewController: %@", sender);
 }
 
-- (void)setzenGlyphPanning:(UIView *)glyphView forKeyboard:(KeyboardViewController *)keyboard {
+- (void)setzenGlyphPanning:(UIView *)glyphView {
 	UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragGlyph:)];
     [glyphView addGestureRecognizer:panRecognizer];
 }
@@ -142,7 +142,7 @@
 - (void)hinzufugenGlyph:(GlyphButton*)glyphButton toKeyboard:(KeyboardViewController*)keyboard {
 	[keyboard.view addSubview:glyphButton];
 	[keyboard.view sendSubviewToBack:glyphButton];
-	[self setzenGlyphPanning:glyphButton forKeyboard:keyboard];
+	[self setzenGlyphPanning:glyphButton];
 }
 
 - (void)hinzufugenGlyphToCanvas:(GlyphButton*)droppedGlyphButton {
